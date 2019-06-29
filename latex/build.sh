@@ -1,3 +1,4 @@
 #!/bin/bash
 
-docker build -t smil/latex:2019 -f Dockerfile .
+docker build -t smillerc/latex:2019 -f Dockerfile .
+docker push smillerc/latex:2019
