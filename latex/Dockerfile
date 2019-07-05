@@ -8,7 +8,7 @@ RUN apk update && \
     tar xfz install-tl-unx.tar.gz && \
     mv install-tl-20* inst && \
     cd inst && \
-    echo "selected_scheme scheme-basic" > profile && \
+    echo "selected_scheme scheme-full" > profile && \
     ./install-tl -profile profile && \
     cd .. && \
     rm -rf *
@@ -23,7 +23,6 @@ ENV PATH /usr/local/texlive/2019/bin/x86_64-linuxmusl:$PATH
 
 WORKDIR /home
 
-RUN tlmgr install textcase was float revtex biber latexmk chktex latexindent texcount synctex fontawesome
-RUN tlmgr install collection-latexextra
+RUN tlmgr install revtex biber latexmk chktex latexindent texcount synctex fontawesome
 
 CMD ["/bin/sh"]
